@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DotNetty.Transport.Libuv</name>
+    </assembly>
+    <members>
+        <member name="T:DotNetty.Transport.Libuv.Native.sockaddr">
+            <summary>
+            https://github.com/aspnet/KestrelHttpServer/blob/dev/src/Microsoft.AspNetCore.Server.Kestrel/Internal/Networking/SockAddr.cs
+            </summary>
+        </member>
+        <member name="T:DotNetty.Transport.Libuv.Native.Pipe">
+            <summary>
+            IPC pipe for recieving handles from different libuv loops
+            </summary>
+        </member>
+        <member name="T:DotNetty.Transport.Libuv.Native.PipeListener">
+            <summary>
+            IPC pipe server to hand out handles to different libuv loops.
+            </summary>
+        </member>
+    </members>
+</doc>
