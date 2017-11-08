@@ -1,0 +1,86 @@
+syntax = "proto3";
+
+option java_package = "eu.epitech";
+option java_outer_classname = "Protocol";
+
+
+
+message Action {
+    enum Type {
+        UNKNOWN = 0;
+        CALL = 1;
+        PUTCARD = 2;
+    }
+    string suit = 3;
+    Type type = 1;
+    string rank = 2;
+}
+
+message Bid {
+    enum Atout {
+        UNKNOWN = 0;
+        SPADES = 1;
+        DIAMONDS = 2;
+        CLUBS = 3;
+        SANS_ATOUT = 4;
+        TOUT_ATOUT = 5;
+        HEARTS = 6;
+    }
+    enum Action {
+        NOTHING = 0;
+        BID = 1;
+        COINCHE = 2;
+        SURCOINCHE = 3;
+        PASS = 4;
+        NAME = 5;
+
+    }
+
+    Action action = 1;
+    Atout atout = 2;
+    int32 value = 3;
+}
+
+message Command {
+    enum Type {
+        UNKNOWN = 0;
+        HELP = 1;
+        QUIT = 2;
+        LIST = 3;
+        NAME = 4;
+    }
+    string argument = 1;
+    Type type = 2;
+}
+
+message Stage {
+    enum Type {
+        UNKNOWN = 0;
+        BID_YOURTURN = 1;
+        GAME_START = 2;
+        GAME_YOURTURN = 3;
+        BID_START = 4;
+
+    }
+    Type type = 1;
+}
+
+message Packet {
+    enum Type {
+        UNKNOWN = 0;
+        BID = 1;
+        ACTION = 2;
+        STAGE = 3;
+        COMMAND = 4;
+
+    }
+
+    Type type = 1;
+    Command command = 2;
+    Bid bid = 3;
+    Action action = 4;
+    Stage stage = 5;
+
+    string message = 6;
+    bool status = 7;
+}
