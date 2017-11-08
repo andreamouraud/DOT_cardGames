@@ -77,23 +77,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameAction.cs" />
-    <Compile Include="Annonce.cs" />
-    <Compile Include="AnnonceManager.cs" />
-    <Compile Include="Card.cs" />
-    <Compile Include="DisplayManager.cs" />
-    <Compile Include="Game.cs" />
-    <Compile Include="Hand.cs" />
-    <Compile Include="Heap.cs" />
-    <Compile Include="ListShuffler.cs" />
-    <Compile Include="PacketManager.cs" />
-    <Compile Include="Player.cs" />
-    <Compile Include="PlayerManager.cs" />
-    <Compile Include="Protocol.cs" />
-    <Compile Include="Room.cs" />
-    <Compile Include="Server.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServerHandler.cs" />
+    <Compile Include="Sources\Annonces\Annonce.cs" />
+    <Compile Include="Sources\Annonces\AnnonceManager.cs" />
+    <Compile Include="Sources\Cards\Card.cs" />
+    <Compile Include="Sources\Cards\Hand.cs" />
+    <Compile Include="Sources\Cards\Heap.cs" />
+    <Compile Include="Sources\Game\Game.cs" />
+    <Compile Include="Sources\Game\GameAction.cs" />
+    <Compile Include="Sources\Game\Room.cs" />
+    <Compile Include="Sources\Players\Player.cs" />
+    <Compile Include="Sources\Players\PlayerManager.cs" />
+    <Compile Include="Sources\Protocol\Protocol.cs" />
+    <Compile Include="Sources\Server\PacketManager.cs" />
+    <Compile Include="Sources\Server\Server.cs" />
+    <Compile Include="Sources\Server\ServerHandler.cs" />
+    <Compile Include="Sources\Utilities\DisplayManager.cs" />
+    <Compile Include="Sources\Utilities\ListShuffler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
