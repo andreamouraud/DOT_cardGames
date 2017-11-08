@@ -51,6 +51,9 @@
     <Reference Include="DotNetty.Transport.Libuv, Version=0.4.7.0, Culture=neutral, PublicKeyToken=bc13ca065fa06c29">
       <HintPath>..\packages\DotNetty.Transport.Libuv.Experimental.0.4.7\lib\net45\DotNetty.Transport.Libuv.dll</HintPath>
     </Reference>
+    <Reference Include="Google.Protobuf, Version=3.4.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604">
+      <HintPath>..\packages\Google.Protobuf.3.4.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
       <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.1.1.0\lib\netstandard1.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
     </Reference>
@@ -74,6 +77,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameAction.cs" />
+    <Compile Include="Annonce.cs" />
+    <Compile Include="AnnonceManager.cs" />
+    <Compile Include="Card.cs" />
+    <Compile Include="DisplayManager.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="Hand.cs" />
+    <Compile Include="Heap.cs" />
+    <Compile Include="ListShuffler.cs" />
+    <Compile Include="PacketManager.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="PlayerManager.cs" />
+    <Compile Include="Protocol.cs" />
+    <Compile Include="Room.cs" />
     <Compile Include="Server.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServerHandler.cs" />

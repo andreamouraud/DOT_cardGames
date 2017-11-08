@@ -52,3 +52,5 @@ C:\Users\mourau_a\Desktop\DOT_cardGames\server\obj\Debug\server.csprojResolveAss
 C:\Users\mourau_a\Desktop\DOT_cardGames\server\obj\Debug\server.csproj.CoreCompileInputs.cache
 C:\Users\mourau_a\Desktop\DOT_cardGames\server\obj\Debug\server.exe
 C:\Users\mourau_a\Desktop\DOT_cardGames\server\obj\Debug\server.pdb
+C:\Users\mourau_a\Desktop\DOT_cardGames\server\bin\Debug\Google.Protobuf.dll
+C:\Users\mourau_a\Desktop\DOT_cardGames\server\bin\Debug\Google.Protobuf.xml

@@ -1,21 +1,40 @@
-﻿namespace cardGamesServer {
+﻿using System.Net.Sockets;
+using DotNetty.Transport.Channels.Groups;
+using DotNetty.Common.Concurrency;
+
+namespace cardGamesServer {
     using System;
     using System.Text;
     using DotNetty.Buffers;
     using DotNetty.Transport.Channels;
 
-    public class ServerHandler : ChannelHandlerAdapter {
-        public override void ChannelRead(IChannelHandlerContext context, object message) {
-            var buffer = message as IByteBuffer;
-            if (buffer != null)
-                Console.WriteLine("Received from client: " + buffer.ToString(Encoding.UTF8));
-            context.WriteAsync(message);
+    public class ServerHandler : SimpleChannelInboundHandler<Packet> {
+        protected override void ChannelRead0(IChannelHandlerContext context, Packet packet) {
+            PacketManager.instance.treatPacket(context.Channel, packet);
         }
 
+        public override void HandlerAdded(IChannelHandlerContext context) { 
+            var channel = context.Channel;
+
+            DisplayManager.print("New Player\t\t: ", DisplayManager.GREEN, false);
+            DisplayManager.print(channel.ToString(),DisplayManager.WHITE,true);
+            PlayerManager.instance.addPlayer(channel);
+        }
+        
+        public override void HandlerRemoved(IChannelHandlerContext context) {
+            var channel = context.Channel;
+            var player = PlayerManager.instance.findPlayer(channel);
+
+            PlayerManager.instance.findRoom(channel).writeToRoomBut(player,"Player " + player.name + " from Team " + player.team + "has left the game\nGame will restart when a new player is back", true, true);
+            DisplayManager.print("Player left\t\t: ", DisplayManager.RED, false);
+            DisplayManager.print(channel.ToString(),DisplayManager.WHITE,true);
+            PlayerManager.instance.removePlayer(channel);
+        }
         public override void ChannelReadComplete(IChannelHandlerContext context) => context.Flush();
 
         public override void ExceptionCaught(IChannelHandlerContext context, Exception exception) {
-            Console.WriteLine("Exception: " + exception);
+            DisplayManager.print("Error\t\t\t: ", DisplayManager.BLACK, false);
+            DisplayManager.print(exception.GetBaseException().Message,DisplayManager.WHITE,true);
             context.CloseAsync();
         }
     }
