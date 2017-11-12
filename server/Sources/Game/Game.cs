@@ -133,16 +133,21 @@ namespace cardGamesServer
         }
 
         private void additionCards() {
-            var scorePliTeam1 = 0;
-            var scorePliTeam2 = 0;
+            var winningTeam = 0;
+            var highest = 0;
+            var scorePli = 0;
 
-            for (var i = 0; i < 4; i++)
-                if (room.players[i].team == 1)
-                    scorePliTeam1 += cardsOnBoard[i].getValue(atout.ToString());
-                else
-                    scorePliTeam2 += cardsOnBoard[i].getValue(atout.ToString());
+            for (var i = 0; i < 4; i++) {
+                var value = cardsOnBoard[i].getValue(atout.ToString());
+
+                if (value > highest) {
+                    highest = value;
+                    winningTeam = room.players[i].team;
+                }
+                scorePli += value;
+            }
             if (room.players[0].hand.cards.Count == 0) {
-                if (scorePliTeam1 > scorePliTeam2) {
+                if (winningTeam == 1) {
                     scoreTeam1 += 10;
                     room.writeToRoom("Team 1 won the Dix de Der", true, true);
                 }
@@ -155,8 +160,10 @@ namespace cardGamesServer
                 else
                     endGame();
             }
-            scoreTeam1 += scorePliTeam1;
-            scoreTeam2 += scorePliTeam2;
+            if (winningTeam == 1)
+                scoreTeam1 += scorePli;
+            else
+                scoreTeam2 += scorePli;
             room.writeToRoom("Scores :\n\t\tTeam 1 : " + scoreTeam1 + "points\n\t\tTeam 2 : " + scoreTeam2 + "points",
                 true, true);
             cardsOnBoard.Clear();
