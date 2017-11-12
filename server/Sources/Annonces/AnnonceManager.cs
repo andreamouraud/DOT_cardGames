@@ -9,7 +9,8 @@ namespace cardGamesServer {
             var annonce = new Annonce();
 
             if (isCarre(hand, annonce) || isCent(hand, annonce) || isBelote(hand, annonce) || isCinquante(hand, annonce)
-                || isTierce(hand, annonce));
+                || isTierce(hand, annonce))
+                return annonce;
             return annonce;
         }
 

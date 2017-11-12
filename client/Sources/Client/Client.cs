@@ -37,7 +37,7 @@ namespace cardGamesClient
                 try {
                     clientChannel = await bootstrap.ConnectAsync(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 9999));
                 }
-                catch (AggregateException e) {
+                catch (AggregateException) {
                     Console.WriteLine("Cannot connect to server");
                     return;
                 }
