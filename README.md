@@ -10,10 +10,11 @@ a french card game named Coinche
  cardGames Installation
 ------------------------------
 
+Use **C# 7** and **msbuild** on *cardGames.sln*
+
+Default path for msbuild.exe : `C:\Program Files (x86)\Microsoft Visual Studio\2017\MSBuild\15.0\Bin`
 
 Documentation
 -------------
 
-The documentation for cardGames is available at:
-
-https://github.com/andreamouraud/DOT_cardGames/Documentation
+The documentation for cardGames is available [here](https://github.com/andreamouraud/DOT_cardGames/Documentation)
