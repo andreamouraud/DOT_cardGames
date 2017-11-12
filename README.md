@@ -16,4 +16,4 @@ Documentation
 
 The documentation for cardGames is available at:
 
-https://github.com/andreamouraud/Documentation
+https://github.com/andreamouraud/DOT_cardGames/Documentation
