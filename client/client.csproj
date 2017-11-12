@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F308AA65-3BC8-4D68-B482-3EE0B4274582}</ProjectGuid>
+    <ProjectGuid>{86F56649-37AB-40BE-9B59-17E14C1076BE}</ProjectGuid>
     <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -39,6 +39,9 @@
     <Reference Include="DotNetty.Codecs, Version=0.4.7.0, Culture=neutral, PublicKeyToken=bc13ca065fa06c29">
       <HintPath>..\packages\DotNetty.Codecs.0.4.7\lib\net45\DotNetty.Codecs.dll</HintPath>
     </Reference>
+    <Reference Include="DotNetty.Codecs.Protobuf, Version=0.4.7.0, Culture=neutral, PublicKeyToken=bc13ca065fa06c29">
+      <HintPath>..\packages\DotNetty.Codecs.Protobuf.0.4.7\lib\net45\DotNetty.Codecs.Protobuf.dll</HintPath>
+    </Reference>
     <Reference Include="DotNetty.Common, Version=0.4.7.0, Culture=neutral, PublicKeyToken=bc13ca065fa06c29">
       <HintPath>..\packages\DotNetty.Common.0.4.7\lib\net45\DotNetty.Common.dll</HintPath>
     </Reference>
@@ -48,8 +51,8 @@
     <Reference Include="DotNetty.Transport, Version=0.4.7.0, Culture=neutral, PublicKeyToken=bc13ca065fa06c29">
       <HintPath>..\packages\DotNetty.Transport.0.4.7\lib\net45\DotNetty.Transport.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Protobuf, Version=3.4.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604">
-      <HintPath>..\packages\Google.Protobuf.3.4.1\lib\net45\Google.Protobuf.dll</HintPath>
+    <Reference Include="Google.Protobuf, Version=3.2.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604">
+      <HintPath>..\packages\Google.Protobuf.3.2.0\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
       <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.1.1.0\lib\netstandard1.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
@@ -74,10 +77,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client.cs" />
-    <Compile Include="ClientHandler.cs" />
-    <Compile Include="JCoinche.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sources\client.cs" />
+    <Compile Include="Sources\GameManager.cs" />
+    <Compile Include="Sources\handler.cs" />
+    <Compile Include="Sources\PacketManager.cs" />
+    <Compile Include="Sources\Protocol.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{01BEF3CD-94EF-4B46-B165-D6FF9FDC9951}</ProjectGuid>
+    <ProjectGuid>{F16BCC06-40F4-4A0D-A32F-719717897895}</ProjectGuid>
     <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -39,6 +39,9 @@
     <Reference Include="DotNetty.Codecs, Version=0.4.7.0, Culture=neutral, PublicKeyToken=bc13ca065fa06c29">
       <HintPath>..\packages\DotNetty.Codecs.0.4.7\lib\net45\DotNetty.Codecs.dll</HintPath>
     </Reference>
+    <Reference Include="DotNetty.Codecs.Protobuf, Version=0.4.7.0, Culture=neutral, PublicKeyToken=bc13ca065fa06c29">
+      <HintPath>..\packages\DotNetty.Codecs.Protobuf.0.4.7\lib\net45\DotNetty.Codecs.Protobuf.dll</HintPath>
+    </Reference>
     <Reference Include="DotNetty.Common, Version=0.4.7.0, Culture=neutral, PublicKeyToken=bc13ca065fa06c29">
       <HintPath>..\packages\DotNetty.Common.0.4.7\lib\net45\DotNetty.Common.dll</HintPath>
     </Reference>
@@ -48,11 +51,8 @@
     <Reference Include="DotNetty.Transport, Version=0.4.7.0, Culture=neutral, PublicKeyToken=bc13ca065fa06c29">
       <HintPath>..\packages\DotNetty.Transport.0.4.7\lib\net45\DotNetty.Transport.dll</HintPath>
     </Reference>
-    <Reference Include="DotNetty.Transport.Libuv, Version=0.4.7.0, Culture=neutral, PublicKeyToken=bc13ca065fa06c29">
-      <HintPath>..\packages\DotNetty.Transport.Libuv.Experimental.0.4.7\lib\net45\DotNetty.Transport.Libuv.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Protobuf, Version=3.4.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604">
-      <HintPath>..\packages\Google.Protobuf.3.4.1\lib\net45\Google.Protobuf.dll</HintPath>
+    <Reference Include="Google.Protobuf, Version=3.2.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604">
+      <HintPath>..\packages\Google.Protobuf.3.2.0\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
       <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.1.1.0\lib\netstandard1.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
@@ -78,22 +78,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sources\Annonces\Annonce.cs" />
-    <Compile Include="Sources\Annonces\AnnonceManager.cs" />
-    <Compile Include="Sources\Cards\Card.cs" />
-    <Compile Include="Sources\Cards\Hand.cs" />
-    <Compile Include="Sources\Cards\Heap.cs" />
-    <Compile Include="Sources\Game\Game.cs" />
-    <Compile Include="Sources\Game\GameAction.cs" />
-    <Compile Include="Sources\Game\Room.cs" />
-    <Compile Include="Sources\Players\Player.cs" />
-    <Compile Include="Sources\Players\PlayerManager.cs" />
-    <Compile Include="Sources\Protocol\Protocol.cs" />
-    <Compile Include="Sources\Server\PacketManager.cs" />
-    <Compile Include="Sources\Server\Server.cs" />
-    <Compile Include="Sources\Server\ServerHandler.cs" />
-    <Compile Include="Sources\Utilities\DisplayManager.cs" />
-    <Compile Include="Sources\Utilities\ListShuffler.cs" />
+    <Compile Include="Sources\Annonce.cs" />
+    <Compile Include="Sources\AnnonceManager.cs" />
+    <Compile Include="Sources\Card.cs" />
+    <Compile Include="Sources\DisplayManager.cs" />
+    <Compile Include="Sources\EchoServerHandler.cs" />
+    <Compile Include="Sources\Game.cs" />
+    <Compile Include="Sources\GameAction.cs" />
+    <Compile Include="Sources\Hand.cs" />
+    <Compile Include="Sources\Heap.cs" />
+    <Compile Include="Sources\ListShuffler.cs" />
+    <Compile Include="Sources\PacketManager.cs" />
+    <Compile Include="Sources\Player.cs" />
+    <Compile Include="Sources\PlayerManager.cs" />
+    <Compile Include="Sources\Program.cs" />
+    <Compile Include="Sources\Protocol.cs" />
+    <Compile Include="Sources\Room.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
