@@ -6,7 +6,7 @@ namespace cardGamesServer
     using DotNetty.Buffers;
     using DotNetty.Transport.Channels;
 
-    public class EchoServerHandler : SimpleChannelInboundHandler<Packet>
+    public class ServerHandler : SimpleChannelInboundHandler<Packet>
     {
         protected override void ChannelRead0(IChannelHandlerContext context, Packet packet) {
             PacketManager.instance.treatPacket(context.Channel, packet);

@@ -28,7 +28,6 @@ namespace cardGamesServer {
 
         public void initPlayer(Player player, string name) {
             player.name = name;
-            Console.WriteLine(name);
             if (checkPlayers())
                 startGame();
         }

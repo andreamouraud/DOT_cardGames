@@ -78,11 +78,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sources\client.cs" />
-    <Compile Include="Sources\GameManager.cs" />
-    <Compile Include="Sources\handler.cs" />
-    <Compile Include="Sources\PacketManager.cs" />
-    <Compile Include="Sources\Protocol.cs" />
+    <Compile Include="Sources\Client\Client.cs" />
+    <Compile Include="Sources\Client\ClientHandler.cs" />
+    <Compile Include="Sources\Client\PacketManager.cs" />
+    <Compile Include="Sources\Game\GameManager.cs" />
+    <Compile Include="Sources\Protocol\Protocol.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

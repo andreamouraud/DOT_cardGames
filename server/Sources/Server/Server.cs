@@ -9,15 +9,12 @@ namespace cardGamesServer
     using DotNetty.Transport.Channels;
     using DotNetty.Transport.Channels.Sockets;
 
-    class Program
+    class Server
     {
         static async Task RunServerAsync()
         {
-
-            IEventLoopGroup bossGroup;
-            IEventLoopGroup workerGroup;
-            bossGroup = new MultithreadEventLoopGroup(1);
-            workerGroup = new MultithreadEventLoopGroup();
+            IEventLoopGroup bossGroup = new MultithreadEventLoopGroup(1);
+            IEventLoopGroup workerGroup = new MultithreadEventLoopGroup();
 
             try
             {
@@ -31,16 +28,16 @@ namespace cardGamesServer
                     .Handler(new LoggingHandler("SRV-LSTN"))
                     .ChildHandler(new ActionChannelInitializer<IChannel>(channel =>
                     {
-                        IChannelPipeline pipeline = channel.Pipeline; 
+                        var pipeline = channel.Pipeline; 
                         pipeline.AddLast(new ProtobufVarint32FrameDecoder());
                         pipeline.AddLast(new ProtobufDecoder(Packet.Parser));
 
                         pipeline.AddLast(new ProtobufVarint32LengthFieldPrepender());
                         pipeline.AddLast(new ProtobufEncoder());
-                        pipeline.AddLast("echo", new EchoServerHandler());
+                        pipeline.AddLast(new ServerHandler());
                     }));
 
-                IChannel boundChannel = await bootstrap.BindAsync(9999);
+                var boundChannel = await bootstrap.BindAsync(9999);
 
                 Console.ReadLine();
 

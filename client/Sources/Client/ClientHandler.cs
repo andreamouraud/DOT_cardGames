@@ -5,7 +5,7 @@ namespace cardGamesClient
     using System;
     using DotNetty.Transport.Channels;
 
-    public class EchoClientHandler : SimpleChannelInboundHandler<Packet>
+    public class ClientHandler : SimpleChannelInboundHandler<Packet>
     {
         protected override void ChannelRead0(IChannelHandlerContext context, Packet packet)
         {

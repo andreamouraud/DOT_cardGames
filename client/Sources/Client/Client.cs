@@ -10,7 +10,7 @@ namespace cardGamesClient
     using DotNetty.Transport.Channels;
     using DotNetty.Transport.Channels.Sockets;
 
-    class Program
+    class Client
     {
         static async Task RunClientAsync()
         {
@@ -30,7 +30,7 @@ namespace cardGamesClient
 
                         pipeline.AddLast(new ProtobufVarint32LengthFieldPrepender());
                         pipeline.AddLast(new ProtobufEncoder());
-                        pipeline.AddLast("echo", new EchoClientHandler());
+                        pipeline.AddLast(new ClientHandler());
                     }));
 
                 IChannel clientChannel = null;
