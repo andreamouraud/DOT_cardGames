@@ -17,4 +17,4 @@ Default path for msbuild.exe : `C:\Program Files (x86)\Microsoft Visual Studio\2
 Documentation
 -------------
 
-The documentation for cardGames is available [here](https://github.com/andreamouraud/DOT_cardGames/Documentation)
+The documentation for cardGames is available [here](https://github.com/andreamouraud/DOT_cardGames/tree/master/Documentation)
